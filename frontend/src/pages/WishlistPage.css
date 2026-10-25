@@ -1,0 +1,22 @@
+/* ── Wishlist Page Styles ───────────────────────────────────────────── */
+.wishlist-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.wishlist-meta-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.wishlist-count-badge {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.wishlist-count-badge strong {
+  color: var(--text-primary);
+}

@@ -1,0 +1,117 @@
+/* ── Auth Layout ─────────────────────────────────────────── */
+.auth-layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* ── Left decorative panel ───────────────────────────────── */
+.auth-panel {
+  background: linear-gradient(160deg, #1a2e1f 0%, #0f2b1b 60%, #081810 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-panel::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(45, 125, 85, 0.25) 0%, transparent 65%);
+  border-radius: 50%;
+}
+
+.auth-panel::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: -60px;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(212, 163, 42, 0.15) 0%, transparent 65%);
+  border-radius: 50%;
+}
+
+.auth-panel-content {
+  position: relative;
+  z-index: 1;
+  max-width: 400px;
+}
+
+.auth-panel-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.auth-panel-quote {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: #c8d8ca;
+  line-height: 1.55;
+  border-left: 3px solid var(--accent-gold);
+  padding-left: 1.25rem;
+  margin: 0;
+}
+
+.auth-panel-quote cite {
+  display: block;
+  margin-top: 1rem;
+  font-style: normal;
+  font-size: 0.875rem;
+  color: #89a892;
+  font-family: var(--font-body);
+}
+
+/* ── Right form area ─────────────────────────────────────── */
+.auth-form-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: var(--bg-app);
+}
+
+.auth-mobile-brand {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  text-decoration: none;
+}
+
+.auth-form-box {
+  width: 100%;
+  max-width: 420px;
+}
+
+@media (max-width: 900px) {
+  .auth-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-panel {
+    display: none;
+  }
+
+  .auth-mobile-brand {
+    display: flex;
+  }
+}

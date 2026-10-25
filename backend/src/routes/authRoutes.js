@@ -1,0 +1,20 @@
+import express from 'express';
+import {
+  register,
+  login,
+  getMe,
+  updateProfile,
+  logout
+} from '../controllers/authController.js';
+import { protect } from '../middleware/authMiddleware.js';
+
+const router = express.Router();
+
+router.post('/register', register);
+router.post('/login', login);
+router.get('/me', protect, getMe);
+router.get('/profile', protect, getMe);       // alias — same handler
+router.put('/profile', protect, updateProfile);
+router.post('/logout', protect, logout);
+
+export default router;
